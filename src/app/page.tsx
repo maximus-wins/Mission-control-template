@@ -36,33 +36,24 @@ export default function Home() {
         padding: "20px 0",
       }}>
         {/* Logo/Brand */}
-        <div style={{ padding: "0 20px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-          <div style={{
-            fontSize: 9,
-            letterSpacing: 3,
-            fontFamily: "'Orbitron', monospace",
-            background: "linear-gradient(90deg, #2F80FF, #7B61FF, #FF4EDB)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            marginBottom: 4,
-          }}>
-            AI MONETIZATION
-          </div>
-          <div style={{
-            fontSize: 16,
-            fontWeight: 700,
-            fontFamily: "'Space Grotesk', sans-serif",
-            color: "#F5F7FA",
-          }}>
-            Mission Control
-          </div>
-          <div style={{
-            fontSize: 10,
-            color: "#6B7186",
-            marginTop: 4,
-            fontFamily: "'Orbitron', monospace",
-          }}>
-            DEMO MODE
+        <div style={{ padding: "0 20px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: 12 }}>
+          <img src="/logo-main.jpg" alt="Maximus" style={{ width: 48, height: 48, borderRadius: 8, objectFit: "cover" }} />
+          <div>
+            <div style={{
+              fontSize: 16,
+              fontWeight: 700,
+              fontFamily: "'Space Grotesk', sans-serif",
+              color: "#D4AF37",
+            }}>
+              HorseArmy
+            </div>
+            <div style={{
+              fontSize: 12,
+              color: "#C0C0C0",
+              marginTop: 2,
+            }}>
+              Mission Control
+            </div>
           </div>
         </div>
 

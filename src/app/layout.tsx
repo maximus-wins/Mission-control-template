@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Monetization Workshops™ - Demo Mission Control",
-  description: "Demo Mission Control Dashboard",
+  title: "HorseArmy Mission Control",
+  description: "HORSEARMY Operations Dashboard",
 };
 
 export default function RootLayout({
