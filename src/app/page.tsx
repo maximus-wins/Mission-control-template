@@ -24,12 +24,12 @@ export default function Home() {
   const [activeView, setActiveView] = useState("ceo-dashboard");
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "#0B0F19" }}>
+    <div style={{ display: "flex", minHeight: "100vh", background: "#1a1a1a" }}>
       {/* Left Sidebar */}
       <div style={{
         width: 240,
         minWidth: 240,
-        background: "linear-gradient(180deg, #111624 0%, #0B0F19 100%)",
+        background: "linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)",
         borderRight: "1px solid rgba(255,255,255,0.06)",
         display: "flex",
         flexDirection: "column",
@@ -40,12 +40,12 @@ export default function Home() {
           <img src="/logo-main.jpg" alt="Maximus" style={{ width: 48, height: 48, borderRadius: 8, objectFit: "cover" }} />
           <div>
             <div style={{
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: 700,
               fontFamily: "'Space Grotesk', sans-serif",
               color: "#D4AF37",
             }}>
-              HorseArmy
+              HORSEARMY.COM
             </div>
             <div style={{
               fontSize: 12,

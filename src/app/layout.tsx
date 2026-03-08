@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HorseArmy Mission Control",
-  description: "HORSEARMY Operations Dashboard",
+  title: "HORSEARMY.COM Mission Control",
+  description: "HORSEARMY.COM Operations Dashboard",
 };
 
 export default function RootLayout({
