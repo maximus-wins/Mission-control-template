@@ -1,38 +1,38 @@
 import { useState } from "react";
 
 const promoteChannels = [
-  { id: "prospect", name: "Prospect", icon: "📧", subtitle: "Cold Outreach at Scale", color: "#2F80FF",
+  { id: "prospect", name: "Prospect", icon: "📧", subtitle: "Cold Outreach at Scale", color: "#008080",
     desc: "Direct outreach to strangers. Virtually free - your AI does the labor.",
     tactics: ["Cold email sequences (multi-domain)", "LinkedIn outreach & DM campaigns", "List building & verification"],
     effort: "HIGH VOLUME", cost: "LOW COST" },
-  { id: "paid", name: "Paid", icon: "💰", subtitle: "Paid Advertising", color: "#7B61FF",
+  { id: "paid", name: "Paid", icon: "💰", subtitle: "Paid Advertising", color: "#D4AF37",
     desc: "Spend money to put offers in front of buyers fast. AI creates, tests, and optimizes.",
     tactics: ["Facebook/Meta ads", "YouTube/Google ads", "Retargeting sequences"],
     effort: "FAST RESULTS", cost: "REQUIRES BUDGET" },
-  { id: "publish", name: "Publish", icon: "🎬", subtitle: "Content → Offer Engine", color: "#2F80FF",
+  { id: "publish", name: "Publish", icon: "🎬", subtitle: "Content → Offer Engine", color: "#008080",
     desc: "Free content that drives to funnels. Every post ends with a path to a transaction.",
     tactics: ["Short-form video (Shorts/Reels/TikTok)", "LinkedIn & X threads", "Blog/Podcast/SEO content"],
     effort: "COMPOUNDS OVER TIME", cost: "FREE" },
-  { id: "partnership", name: "Partnership", icon: "🤝", subtitle: "Other People's Audiences", color: "#7B61FF",
+  { id: "partnership", name: "Partnership", icon: "🤝", subtitle: "Other People's Audiences", color: "#D4AF37",
     desc: "Get others to put your offer in front of their people. Highest leverage play.",
     tactics: ["Dream 100 pursuit", "Affiliate recruitment", "JV deals & guest appearances"],
     effort: "HIGH LEVERAGE", cost: "RELATIONSHIP CAPITAL" },
 ];
 
 const profitMechanisms = [
-  { id: "ai-sales", name: "AI Sales Team", icon: "🤖", type: "Call", color: "#FF4EDB",
+  { id: "ai-sales", name: "AI Sales Team", icon: "🤖", type: "Call", color: "#D4AF37",
     desc: "AI-powered setter that pursues leads 24/7 - sells tickets to events, assists closers, closes directly." },
-  { id: "lto-funnel", name: "LTO (Limited Time Offer) Funnel", icon: "⚡", type: "Cart", color: "#2F80FF",
+  { id: "lto-funnel", name: "LTO (Limited Time Offer) Funnel", icon: "⚡", type: "Cart", color: "#008080",
     desc: "Low-ticket impulse buy with urgency and scarcity. Converts cold traffic into buyers fast." },
-  { id: "call-funnel", name: "Book-a-Call Funnel", icon: "📞", type: "Call", color: "#2F80FF",
+  { id: "call-funnel", name: "Book-a-Call Funnel", icon: "📞", type: "Call", color: "#008080",
     desc: "Qualifies prospects and books sales calls. Best for high-ticket closes." },
-  { id: "book-funnel", name: "Free + Shipping Book Funnel", icon: "📖", type: "Cart", color: "#7B61FF",
+  { id: "book-funnel", name: "Free + Shipping Book Funnel", icon: "📖", type: "Cart", color: "#D4AF37",
     desc: "Physical book as Trojan horse - mass distribution entry point into your value ladder." },
-  { id: "webinar", name: "Webinar Funnel", icon: "🎙️", type: "Crowd", color: "#2F80FF",
+  { id: "webinar", name: "Webinar Funnel", icon: "🎙️", type: "Crowd", color: "#008080",
     desc: "Free registration, 90min-2hr live presentation. Sells your core high-ticket offers." },
-  { id: "challenge", name: "Challenge Funnel", icon: "🏆", type: "Crowd", color: "#FF4EDB",
+  { id: "challenge", name: "Challenge Funnel", icon: "🏆", type: "Crowd", color: "#D4AF37",
     desc: "Multi-day live challenge with optional paid VIP upsell. Builds community and converts." },
-  { id: "event", name: "Event Funnel", icon: "🎤", type: "Crowd", color: "#7B61FF",
+  { id: "event", name: "Event Funnel", icon: "🎤", type: "Crowd", color: "#D4AF37",
     desc: "Live in-person or virtual event. Sells everything across the full value ladder." },
 ];
 
@@ -45,17 +45,17 @@ const shelfFunnels = [
 ];
 
 const produceCategories = [
-  { id: "ship", label: "SHIP", color: "#2F80FF", desc: "Physical and digital products sold at scale",
+  { id: "ship", label: "SHIP", color: "#008080", desc: "Physical and digital products sold at scale",
     items: [
       { id: "platform-sales", name: "Platform Sales", icon: "📦", desc: "Shopify, Amazon, Etsy, or marketplace-driven product sales." },
       { id: "physical-products", name: "Physical Products", icon: "🎁", desc: "Tangible goods manufactured, sourced, or white-labeled." },
       { id: "digital-products", name: "Digital Products", icon: "💾", desc: "eBooks, templates, courses, downloads, or digital assets." },
     ]},
-  { id: "serve", label: "SERVE", color: "#FF4EDB", desc: "Done-for-you services and labor",
+  { id: "serve", label: "SERVE", color: "#D4AF37", desc: "Done-for-you services and labor",
     items: [
       { id: "dfy-services", name: "DFY Services", icon: "⚡", desc: "Agency work, done-for-you builds, managed services, or labor." },
     ]},
-  { id: "unlock", label: "UNLOCK", color: "#7B61FF", desc: "Access-based and recurring revenue models",
+  { id: "unlock", label: "UNLOCK", color: "#D4AF37", desc: "Access-based and recurring revenue models",
     items: [
       { id: "software", name: "Software", icon: "💻", desc: "SaaS, apps, tools, or platforms you own or white-label." },
       { id: "licensing", name: "Licensing", icon: "📜", desc: "License your IP, frameworks, content, or technology to others." },
@@ -148,7 +148,7 @@ const QuarterlyProgress = ({ currentRevenue, goal, daysRemaining }: { currentRev
           <span style={{ fontSize: 13, fontWeight: 700, color: "#10B981", fontFamily: "'Space Grotesk', sans-serif" }}>{progress.toFixed(1)}%</span>
         </div>
         <div style={{ height: 10, background: "rgba(255,255,255,0.1)", borderRadius: 5, overflow: "hidden" }}>
-          <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #10B981, #2F80FF)", borderRadius: 5, transition: "width 0.5s ease" }} />
+          <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #10B981, #008080)", borderRadius: 5, transition: "width 0.5s ease" }} />
         </div>
       </div>
       
@@ -159,7 +159,7 @@ const QuarterlyProgress = ({ currentRevenue, goal, daysRemaining }: { currentRev
         </div>
         <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "12px 16px", border: "1px solid rgba(255,255,255,0.06)" }}>
           <div style={{ fontSize: 9, color: "#6B7186", fontFamily: "'Orbitron', monospace", marginBottom: 2 }}>DAILY TARGET TO HIT GOAL</div>
-          <div style={{ fontSize: 22, fontWeight: 700, color: "#FF4EDB", fontFamily: "'Space Grotesk', sans-serif" }}>${dailyTarget.toLocaleString()}</div>
+          <div style={{ fontSize: 22, fontWeight: 700, color: "#D4AF37", fontFamily: "'Space Grotesk', sans-serif" }}>${dailyTarget.toLocaleString()}</div>
         </div>
       </div>
     </div>
@@ -234,7 +234,7 @@ export default function RevenueEnginePlanner() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#0B0F19", fontFamily: "'Inter', system-ui, sans-serif", color: "#F5F7FA" }}>
-      <div style={{ height: 3, background: "linear-gradient(90deg, #2F80FF, #7B61FF, #FF4EDB, #7B61FF, #2F80FF)" }} />
+      <div style={{ height: 3, background: "linear-gradient(90deg, #008080, #D4AF37, #D4AF37, #D4AF37, #008080)" }} />
 
       {goal > 0 && (
         <div style={{ background: "rgba(16,185,129,0.06)", borderBottom: "1px solid rgba(16,185,129,0.15)", padding: "10px 24px" }}>
@@ -252,7 +252,7 @@ export default function RevenueEnginePlanner() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
             <div>
-              <div style={{ fontSize: 10, letterSpacing: 4, fontFamily: "'Orbitron', monospace", background: "linear-gradient(90deg, #2F80FF, #7B61FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI MONETIZATION WORKSHOPS</div>
+              <div style={{ fontSize: 10, letterSpacing: 4, fontFamily: "'Orbitron', monospace", background: "linear-gradient(90deg, #008080, #D4AF37)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI MONETIZATION WORKSHOPS</div>
               <h1 style={{ fontSize: 22, fontWeight: 700, margin: "4px 0 0", color: "#F5F7FA", fontFamily: "'Space Grotesk', sans-serif" }}>Revenue Engine Planner</h1>
               <p style={{ fontSize: 12, color: "#6B7186", margin: "4px 0 0" }}>Choose your plays. Set your targets. Build your 90-day plan.</p>
             </div>
@@ -309,7 +309,7 @@ export default function RevenueEnginePlanner() {
             <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:10,padding:"20px 24px",marginBottom:24,textAlign:"center"}}>
               <div style={{fontSize:10,color:"#6B7186",letterSpacing:3,fontFamily:"'Orbitron', monospace",marginBottom:14}}>HOW THE ENGINE WORKS</div>
               <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap",marginBottom:12}}>
-                {[{label:"PROMOTE",color:"#2F80FF",sub:"Get Leads"},null,{label:"PROFIT",color:"#FF4EDB",sub:"Close Sales"},null,{label:"PRODUCE",color:"#7B61FF",sub:"Deliver & Delight"}].map((item,i)=>item ? (
+                {[{label:"PROMOTE",color:"#008080",sub:"Get Leads"},null,{label:"PROFIT",color:"#D4AF37",sub:"Close Sales"},null,{label:"PRODUCE",color:"#D4AF37",sub:"Deliver & Delight"}].map((item,i)=>item ? (
                   <div key={i} style={{textAlign:"center"}}>
                     <div style={{background:item.color+"15",border:"1px solid "+item.color+"33",padding:"10px 20px",borderRadius:6,fontSize:14,fontWeight:700,color:item.color,fontFamily:"'Space Grotesk', sans-serif"}}>{item.label}</div>
                     <div style={{fontSize:10,color:"#6B7186",marginTop:4,fontFamily:"'Orbitron', monospace"}}>{item.sub}</div>
@@ -318,17 +318,17 @@ export default function RevenueEnginePlanner() {
                 <span style={{color:"#333",fontSize:18}}>{"↩"}</span>
               </div>
               <div style={{fontSize:12,color:"#8A8F98",lineHeight:1.6,maxWidth:700,margin:"0 auto"}}>
-                <strong style={{color:"#2F80FF"}}>Promote</strong> generates leads {"→"} <strong style={{color:"#FF4EDB"}}>Profit</strong> closes them {"→"} <strong style={{color:"#7B61FF"}}>Produce</strong> delivers and creates referrals that loop back
+                <strong style={{color:"#008080"}}>Promote</strong> generates leads {"→"} <strong style={{color:"#D4AF37"}}>Profit</strong> closes them {"→"} <strong style={{color:"#D4AF37"}}>Produce</strong> delivers and creates referrals that loop back
               </div>
             </div>
 
-            <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(47,128,255,0.15)",borderRadius:10,padding:"16px 20px",marginBottom:24,borderLeft:"4px solid #2F80FF"}}>
-              <div style={{fontSize:12,fontWeight:700,marginBottom:6,fontFamily:"'Space Grotesk', sans-serif",color:"#2F80FF"}}>YOUR 90-DAY MISSION</div>
-              <div style={{fontSize:13,color:"#C8CCD4",lineHeight:1.7}}>Pick the <strong>minimum viable plays</strong> to validate your offer and generate revenue in 90 days. The goal is <span style={{color:"#FF4EDB",fontWeight:600}}>focus, not coverage</span>.</div>
+            <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(47,128,255,0.15)",borderRadius:10,padding:"16px 20px",marginBottom:24,borderLeft:"4px solid #008080"}}>
+              <div style={{fontSize:12,fontWeight:700,marginBottom:6,fontFamily:"'Space Grotesk', sans-serif",color:"#008080"}}>YOUR 90-DAY MISSION</div>
+              <div style={{fontSize:13,color:"#C8CCD4",lineHeight:1.7}}>Pick the <strong>minimum viable plays</strong> to validate your offer and generate revenue in 90 days. The goal is <span style={{color:"#D4AF37",fontWeight:600}}>focus, not coverage</span>.</div>
             </div>
 
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:14}}>
-              {[{step:"01",label:"PROMOTE",color:"#2F80FF",desc:"Pick 1-2 channels to generate leads. One great channel beats four mediocre ones.",link:"promote"},{step:"02",label:"PROFIT",color:"#FF4EDB",desc:"Choose your funnels and closing methods. Cart, Call, or Crowd.",link:"profit"},{step:"03",label:"PRODUCE",color:"#7B61FF",desc:"Define what you are selling and delivering. Start with one core offer.",link:"produce"}].map((s,si)=>(
+              {[{step:"01",label:"PROMOTE",color:"#008080",desc:"Pick 1-2 channels to generate leads. One great channel beats four mediocre ones.",link:"promote"},{step:"02",label:"PROFIT",color:"#D4AF37",desc:"Choose your funnels and closing methods. Cart, Call, or Crowd.",link:"profit"},{step:"03",label:"PRODUCE",color:"#D4AF37",desc:"Define what you are selling and delivering. Start with one core offer.",link:"produce"}].map((s,si)=>(
                 <div key={si} onClick={()=>setView(s.link)} style={{background:"rgba(255,255,255,0.03)",border:"1px solid "+s.color+"22",borderRadius:10,padding:"20px 22px",cursor:"pointer",borderTop:"3px solid "+s.color,position:"relative"}}>
                   {planLocked && <div style={{ position: "absolute", top: 10, right: 10, fontSize: 12, opacity: 0.5 }}>🔒</div>}
                   <div style={{fontSize:10,color:s.color,fontFamily:"'Orbitron', monospace",letterSpacing:2,marginBottom:8}}>STEP {s.step}</div>
@@ -343,7 +343,7 @@ export default function RevenueEnginePlanner() {
 
         {view === "promote" && (
           <div>
-            <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#2F80FF"}}>STEP 01 - PROMOTE</div>
+            <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#008080"}}>STEP 01 - PROMOTE</div>
             <div style={{fontSize:13,color:"#6B7186",marginBottom:6}}>How will you generate leads? Pick 1-2 channels for your 90-day focus.</div>
             <div style={{fontSize:11,color:"#555",marginBottom:20}}>Click the status badge to cycle: Not Selected {"→"} 90-Day Focus {"→"} Phase 2</div>
             <SummaryBar items={promoteChannels} statuses={promoteS} />
@@ -389,17 +389,17 @@ export default function RevenueEnginePlanner() {
           const ai = profitMechanisms[0];
           return (
             <div>
-              <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#FF4EDB"}}>STEP 02 - PROFIT</div>
+              <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#D4AF37"}}>STEP 02 - PROFIT</div>
               <div style={{fontSize:13,color:"#6B7186",marginBottom:6}}>How will you close sales? Three closing mechanisms - pick what fits.</div>
-              <div style={{fontSize:11,color:"#555",marginBottom:20}}><strong style={{color:"#2F80FF"}}>Cart</strong> = the page sells it {"·"} <strong style={{color:"#FF4EDB"}}>Call</strong> = a conversation sells it {"·"} <strong style={{color:"#7B61FF"}}>Crowd</strong> = an event sells it</div>
+              <div style={{fontSize:11,color:"#555",marginBottom:20}}><strong style={{color:"#008080"}}>Cart</strong> = the page sells it {"·"} <strong style={{color:"#D4AF37"}}>Call</strong> = a conversation sells it {"·"} <strong style={{color:"#D4AF37"}}>Crowd</strong> = an event sells it</div>
               <SummaryBar items={profitMechanisms} statuses={profitS} />
-              <div style={{background:aiS==="now"?"rgba(255,78,219,0.06)":"rgba(255,255,255,0.03)",border:"1px solid "+(aiS==="now"?"rgba(255,78,219,0.3)":"rgba(255,255,255,0.06)"),borderRadius:10,padding:"20px 22px",marginBottom:24,borderLeft:"4px solid "+(aiS==="now"?"#FF4EDB":aiS==="later"?"#F59E0B":"rgba(255,255,255,0.06)"),opacity:aiS==="off"?0.6:planLocked?0.8:1,position:"relative",pointerEvents:planLocked?"none":"auto"}}>
+              <div style={{background:aiS==="now"?"rgba(255,78,219,0.06)":"rgba(255,255,255,0.03)",border:"1px solid "+(aiS==="now"?"rgba(255,78,219,0.3)":"rgba(255,255,255,0.06)"),borderRadius:10,padding:"20px 22px",marginBottom:24,borderLeft:"4px solid "+(aiS==="now"?"#D4AF37":aiS==="later"?"#F59E0B":"rgba(255,255,255,0.06)"),opacity:aiS==="off"?0.6:planLocked?0.8:1,position:"relative",pointerEvents:planLocked?"none":"auto"}}>
                 {planLocked && <div style={{ position: "absolute", top: 10, right: 10, fontSize: 12, opacity: 0.5 }}>🔒</div>}
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                   <div style={{display:"flex",alignItems:"center",gap:10}}>
                     <span style={{fontSize:28}}>{ai.icon}</span>
                     <div>
-                      <div style={{fontSize:18,fontWeight:700,color:aiS==="now"?"#FF4EDB":"#C8CCD4",fontFamily:"'Space Grotesk', sans-serif"}}>{ai.name}</div>
+                      <div style={{fontSize:18,fontWeight:700,color:aiS==="now"?"#D4AF37":"#C8CCD4",fontFamily:"'Space Grotesk', sans-serif"}}>{ai.name}</div>
                       <div style={{fontSize:12,color:"#8A8F98",marginTop:2}}>{ai.desc}</div>
                     </div>
                   </div>
@@ -407,11 +407,11 @@ export default function RevenueEnginePlanner() {
                 </div>
                 <div style={{display:"flex",gap:8,marginTop:12,flexWrap:"wrap"}}>
                   {["Sells tickets to events","Assists human closers","Closes deals directly","Pursues leads 24/7"].map((t,i)=>(
-                    <span key={i} style={{fontSize:10,padding:"3px 10px",borderRadius:4,background:"rgba(255,78,219,0.06)",border:"1px solid rgba(255,78,219,0.12)",color:"#FF4EDB",fontFamily:"'Orbitron', monospace"}}>{t}</span>
+                    <span key={i} style={{fontSize:10,padding:"3px 10px",borderRadius:4,background:"rgba(255,78,219,0.06)",border:"1px solid rgba(255,78,219,0.12)",color:"#D4AF37",fontFamily:"'Orbitron', monospace"}}>{t}</span>
                   ))}
                 </div>
               </div>
-              {[{label:"CART",sub:"THE PAGE SELLS IT",color:"#2F80FF",items:profitMechanisms.filter(m=>m.type==="Cart")},{label:"CALL",sub:"A CONVERSATION SELLS IT",color:"#FF4EDB",items:profitMechanisms.filter(m=>m.type==="Call"&&m.id!=="ai-sales")},{label:"CROWD",sub:"AN EVENT SELLS IT",color:"#7B61FF",items:profitMechanisms.filter(m=>m.type==="Crowd")}].map((sec,si)=>(
+              {[{label:"CART",sub:"THE PAGE SELLS IT",color:"#008080",items:profitMechanisms.filter(m=>m.type==="Cart")},{label:"CALL",sub:"A CONVERSATION SELLS IT",color:"#D4AF37",items:profitMechanisms.filter(m=>m.type==="Call"&&m.id!=="ai-sales")},{label:"CROWD",sub:"AN EVENT SELLS IT",color:"#D4AF37",items:profitMechanisms.filter(m=>m.type==="Crowd")}].map((sec,si)=>(
                 <div key={si} style={{marginBottom:20}}>
                   <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
                     <div style={{fontSize:12,fontWeight:700,color:sec.color,fontFamily:"'Space Grotesk', sans-serif"}}>{sec.label}</div>
@@ -435,7 +435,7 @@ export default function RevenueEnginePlanner() {
 
         {view === "produce" && (
           <div>
-            <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#7B61FF"}}>STEP 03 - PRODUCE</div>
+            <div style={{fontSize:10,letterSpacing:3,marginBottom:6,fontFamily:"'Orbitron', monospace",color:"#D4AF37"}}>STEP 03 - PRODUCE</div>
             <div style={{fontSize:13,color:"#6B7186",marginBottom:6}}>What are you selling and delivering? Select the product types that apply to your business.</div>
             <div style={{fontSize:11,color:"#555",marginBottom:20}}>Great delivery creates referrals - referrals loop back to Promote. Production IS marketing.</div>
             <SummaryBar items={allProduceItems} statuses={produceS} />
@@ -496,7 +496,7 @@ export default function RevenueEnginePlanner() {
               </div>
             )}
 
-            {[{label:"PROMOTE",color:"#2F80FF",items:promoteChannels,st:promoteS,sub:"Generating Leads"},{label:"PROFIT",color:"#FF4EDB",items:profitMechanisms,st:profitS,sub:"Closing Sales"},{label:"PRODUCE",color:"#7B61FF",items:allProduceItems,st:produceS,sub:"Delivering Value"}].map((sec,si)=>{
+            {[{label:"PROMOTE",color:"#008080",items:promoteChannels,st:promoteS,sub:"Generating Leads"},{label:"PROFIT",color:"#D4AF37",items:profitMechanisms,st:profitS,sub:"Closing Sales"},{label:"PRODUCE",color:"#D4AF37",items:allProduceItems,st:produceS,sub:"Delivering Value"}].map((sec,si)=>{
               const nI=sec.items.filter(i=>sec.st[i.id]==="now");
               const lI=sec.items.filter(i=>sec.st[i.id]==="later");
               return(
@@ -540,7 +540,7 @@ export default function RevenueEnginePlanner() {
               <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:10,padding:"20px 24px",textAlign:"center"}}>
                 <div style={{fontSize:10,color:"#6B7186",letterSpacing:3,fontFamily:"'Orbitron', monospace",marginBottom:14}}>YOUR ENGINE IN MOTION</div>
                 <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}>
-                  {[{its:promoteChannels.filter(c=>promoteS[c.id]==="now"),c:"#2F80FF",l:"PROMOTE"},{its:profitMechanisms.filter(m=>profitS[m.id]==="now"),c:"#FF4EDB",l:"PROFIT"},{its:allProduceItems.filter(o=>produceS[o.id]==="now"),c:"#7B61FF",l:"PRODUCE"}].map((col,ci)=>(
+                  {[{its:promoteChannels.filter(c=>promoteS[c.id]==="now"),c:"#008080",l:"PROMOTE"},{its:profitMechanisms.filter(m=>profitS[m.id]==="now"),c:"#D4AF37",l:"PROFIT"},{its:allProduceItems.filter(o=>produceS[o.id]==="now"),c:"#D4AF37",l:"PRODUCE"}].map((col,ci)=>(
                     <div key={ci} style={{display:"flex",alignItems:"center",gap:8}}>
                       <div style={{textAlign:"center"}}>
                         {col.its.length>0?col.its.map(it=>(
@@ -560,8 +560,8 @@ export default function RevenueEnginePlanner() {
         )}
 
         <div style={{marginTop:32,textAlign:"center"}}>
-          <div style={{height:2,background:"linear-gradient(90deg, transparent, #2F80FF44, #7B61FF44, #FF4EDB44, transparent)",marginBottom:16}} />
-          <span style={{fontSize:16,fontWeight:700,fontFamily:"'Space Grotesk', sans-serif",color:"#F5F7FA"}}>STOP LEARNING. <span style={{color:"#FF4EDB"}}>START BUILDING.</span></span>
+          <div style={{height:2,background:"linear-gradient(90deg, transparent, #00808044, #D4AF3744, #D4AF3744, transparent)",marginBottom:16}} />
+          <span style={{fontSize:16,fontWeight:700,fontFamily:"'Space Grotesk', sans-serif",color:"#F5F7FA"}}>STOP LEARNING. <span style={{color:"#D4AF37"}}>START BUILDING.</span></span>
         </div>
       </div>
     </div>

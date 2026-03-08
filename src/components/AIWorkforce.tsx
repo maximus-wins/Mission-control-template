@@ -10,7 +10,7 @@ const agents = [
     avatar: "🎯",
     role: "AI Sales Rep",
     department: "Sales",
-    departmentColor: "#FF4EDB",
+    departmentColor: "#D4AF37",
     status: "active",
     currentTask: "Following up with 12 hot leads from yesterday's webinar",
     progress: 67,
@@ -26,7 +26,7 @@ const agents = [
     avatar: "🔍",
     role: "Lead Researcher",
     department: "Prospecting",
-    departmentColor: "#2F80FF",
+    departmentColor: "#008080",
     status: "active",
     currentTask: "Scanning Dream 100 targets for buying signals",
     progress: 43,
@@ -42,7 +42,7 @@ const agents = [
     avatar: "📱",
     role: "Content Creator",
     department: "Marketing",
-    departmentColor: "#7B61FF",
+    departmentColor: "#D4AF37",
     status: "active",
     currentTask: "Scheduling 4 posts for LinkedIn and Twitter",
     progress: 85,
@@ -58,7 +58,7 @@ const agents = [
     avatar: "💰",
     role: "Deal Specialist",
     department: "Sales",
-    departmentColor: "#FF4EDB",
+    departmentColor: "#D4AF37",
     status: "working",
     currentTask: "Nurturing 8 qualified prospects in pipeline",
     progress: 52,
@@ -199,7 +199,7 @@ export default function AIWorkforce() {
           fontSize: 10,
           letterSpacing: 3,
           fontFamily: "'Orbitron', monospace",
-          background: "linear-gradient(90deg, #2F80FF, #7B61FF, #FF4EDB)",
+          background: "linear-gradient(90deg, #008080, #D4AF37, #D4AF37)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           marginBottom: 8,
@@ -265,7 +265,7 @@ export default function AIWorkforce() {
             <span style={{
               fontSize: 14,
               fontWeight: 600,
-              color: "#2F80FF",
+              color: "#008080",
               fontFamily: "'Orbitron', monospace",
             }}>
               {formatTime(currentTime)}
@@ -506,7 +506,7 @@ export default function AIWorkforce() {
                     <div style={{
                       fontSize: 18,
                       fontWeight: 700,
-                      color: "#2F80FF",
+                      color: "#008080",
                       fontFamily: "'Space Grotesk', sans-serif",
                     }}>
                       {agent.avgResponseTime}
@@ -571,7 +571,7 @@ export default function AIWorkforce() {
                 fontSize: 10,
                 letterSpacing: 2,
                 fontFamily: "'Orbitron', monospace",
-                color: "#7B61FF",
+                color: "#D4AF37",
                 marginBottom: 4,
               }}>
                 LIVE FEED
@@ -650,7 +650,7 @@ export default function AIWorkforce() {
                     marginBottom: 4,
                     lineHeight: 1.4,
                   }}>
-                    <span style={{ fontWeight: 600, color: "#2F80FF" }}>{item.agent}</span>
+                    <span style={{ fontWeight: 600, color: "#008080" }}>{item.agent}</span>
                     {" "}{item.action}
                   </div>
                   <div style={{

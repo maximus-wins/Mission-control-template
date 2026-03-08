@@ -10,12 +10,12 @@ const pipelineTypes: Record<PipelineType, { name: string; stages: { id: string; 
   "book-a-call": {
     name: "Book a Call",
     stages: [
-      { id: "new-lead", name: "New Lead", description: "Just entered, qualifying", color: "#2F80FF" },
-      { id: "qualified", name: "Qualified", description: "Confirmed fit", color: "#7B61FF" },
+      { id: "new-lead", name: "New Lead", description: "Just entered, qualifying", color: "#008080" },
+      { id: "qualified", name: "Qualified", description: "Confirmed fit", color: "#D4AF37" },
       { id: "call-scheduled", name: "Call Scheduled", description: "Meeting on calendar", color: "#F59E0B" },
       { id: "call-completed", name: "Call Completed", description: "Discovery done", color: "#06B6D4" },
       { id: "proposal-sent", name: "Proposal Sent", description: "Offer delivered", color: "#10B981" },
-      { id: "negotiating", name: "Negotiating", description: "Working terms", color: "#FF4EDB" },
+      { id: "negotiating", name: "Negotiating", description: "Working terms", color: "#D4AF37" },
       { id: "closed-won", name: "Closed Won", description: "Money in! 🎉", color: "#10B981" },
       { id: "closed-lost", name: "Closed Lost", description: "Not this time", color: "#EF4444" },
     ],
@@ -23,12 +23,12 @@ const pipelineTypes: Record<PipelineType, { name: string; stages: { id: string; 
   webinar: {
     name: "Webinar",
     stages: [
-      { id: "registered", name: "Registered", description: "Signed up for webinar", color: "#2F80FF" },
-      { id: "reminded", name: "Reminded", description: "Got reminder emails", color: "#7B61FF" },
+      { id: "registered", name: "Registered", description: "Signed up for webinar", color: "#008080" },
+      { id: "reminded", name: "Reminded", description: "Got reminder emails", color: "#D4AF37" },
       { id: "attended-live", name: "Attended Live", description: "Showed up live", color: "#10B981" },
       { id: "watched-replay", name: "Watched Replay", description: "Viewed recording", color: "#06B6D4" },
       { id: "clicked-offer", name: "Clicked Offer", description: "Clicked sales link", color: "#F59E0B" },
-      { id: "started-checkout", name: "Started Checkout", description: "Cart initiated", color: "#FF4EDB" },
+      { id: "started-checkout", name: "Started Checkout", description: "Cart initiated", color: "#D4AF37" },
       { id: "purchased", name: "Purchased", description: "Converted! 🎉", color: "#10B981" },
       { id: "no-show", name: "No Show", description: "Didn't attend", color: "#EF4444" },
     ],
@@ -36,11 +36,11 @@ const pipelineTypes: Record<PipelineType, { name: string; stages: { id: string; 
   challenge: {
     name: "Challenge",
     stages: [
-      { id: "registered", name: "Registered", description: "Signed up for challenge", color: "#2F80FF" },
-      { id: "day-1", name: "Day 1 Attended", description: "Showed up day 1", color: "#7B61FF" },
+      { id: "registered", name: "Registered", description: "Signed up for challenge", color: "#008080" },
+      { id: "day-1", name: "Day 1 Attended", description: "Showed up day 1", color: "#D4AF37" },
       { id: "day-2", name: "Day 2 Attended", description: "Showed up day 2", color: "#06B6D4" },
       { id: "day-3", name: "Day 3 Attended", description: "Showed up day 3", color: "#F59E0B" },
-      { id: "offer-presented", name: "Offer Presented", description: "Saw the offer", color: "#FF4EDB" },
+      { id: "offer-presented", name: "Offer Presented", description: "Saw the offer", color: "#D4AF37" },
       { id: "started-checkout", name: "Started Checkout", description: "Cart initiated", color: "#E91E8C" },
       { id: "purchased", name: "Purchased", description: "Challenge buyer! 🎉", color: "#10B981" },
       { id: "vip-upsold", name: "VIP Upsold", description: "Upgraded to VIP! 💎", color: "#FFD700" },
@@ -68,16 +68,16 @@ interface Deal {
 
 // Temperature colors
 const tempColors = {
-  hot: "#FF4EDB",
+  hot: "#D4AF37",
   warm: "#F59E0B",
-  cold: "#2F80FF",
+  cold: "#008080",
 };
 
 // Tag colors by type
 const tagColors = {
-  event: { bg: "rgba(47,128,255,0.15)", border: "rgba(47,128,255,0.3)", text: "#2F80FF" },
+  event: { bg: "rgba(47,128,255,0.15)", border: "rgba(47,128,255,0.3)", text: "#008080" },
   status: { bg: "rgba(16,185,129,0.15)", border: "rgba(16,185,129,0.3)", text: "#10B981" },
-  behavior: { bg: "rgba(123,97,255,0.15)", border: "rgba(123,97,255,0.3)", text: "#7B61FF" },
+  behavior: { bg: "rgba(123,97,255,0.15)", border: "rgba(123,97,255,0.3)", text: "#D4AF37" },
 };
 
 // Sample Data - Book a Call (Higher Ticket $5K-$50K)
@@ -277,7 +277,7 @@ export default function ProfitPipeline() {
           fontSize: 10,
           letterSpacing: 3,
           fontFamily: "'Orbitron', monospace",
-          background: "linear-gradient(90deg, #10B981, #2F80FF, #FF4EDB)",
+          background: "linear-gradient(90deg, #10B981, #008080, #D4AF37)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           marginBottom: 8,
@@ -389,7 +389,7 @@ export default function ProfitPipeline() {
             fontSize: 10,
             letterSpacing: 1.5,
             fontFamily: "'Orbitron', monospace",
-            color: "#2F80FF",
+            color: "#008080",
             marginBottom: 8,
           }}>
             CONVERSION RATE
@@ -415,7 +415,7 @@ export default function ProfitPipeline() {
             fontSize: 10,
             letterSpacing: 1.5,
             fontFamily: "'Orbitron', monospace",
-            color: "#FF4EDB",
+            color: "#D4AF37",
             marginBottom: 8,
           }}>
             REVENUE IN PIPELINE
@@ -441,7 +441,7 @@ export default function ProfitPipeline() {
             fontSize: 10,
             letterSpacing: 1.5,
             fontFamily: "'Orbitron', monospace",
-            color: "#7B61FF",
+            color: "#D4AF37",
             marginBottom: 8,
           }}>
             CLOSING THIS WEEK
@@ -453,7 +453,7 @@ export default function ProfitPipeline() {
             fontFamily: "'Space Grotesk', sans-serif",
           }}>
             {closingThisWeek.length}
-            <span style={{ fontSize: 14, color: "#7B61FF", marginLeft: 8 }}>
+            <span style={{ fontSize: 14, color: "#D4AF37", marginLeft: 8 }}>
               (${closingValue.toLocaleString()})
             </span>
           </div>
@@ -649,7 +649,7 @@ export default function ProfitPipeline() {
                           padding: "2px 6px",
                           borderRadius: 4,
                           background: "rgba(47,128,255,0.15)",
-                          color: "#2F80FF",
+                          color: "#008080",
                           fontFamily: "'Orbitron', monospace",
                           display: "inline-block",
                           marginBottom: 8,
@@ -665,7 +665,7 @@ export default function ProfitPipeline() {
                             borderTop: "1px solid rgba(255,255,255,0.06)",
                             paddingTop: 8,
                           }}>
-                            <span style={{ color: "#7B61FF" }}>🤖</span>
+                            <span style={{ color: "#D4AF37" }}>🤖</span>
                             {" "}{deal.notes[deal.notes.length - 1].content.substring(0, 35)}
                             {deal.notes[deal.notes.length - 1].content.length > 35 && "..."}
                           </div>
@@ -718,7 +718,7 @@ export default function ProfitPipeline() {
                   fontSize: 10,
                   letterSpacing: 2,
                   fontFamily: "'Orbitron', monospace",
-                  color: "#7B61FF",
+                  color: "#D4AF37",
                   marginBottom: 4,
                 }}>
                   AI ACTIVITY
@@ -792,7 +792,7 @@ export default function ProfitPipeline() {
                     color: "#F5F7FA",
                     lineHeight: 1.4,
                   }}>
-                    <span style={{ fontWeight: 600, color: "#7B61FF" }}>{item.agent}</span>
+                    <span style={{ fontWeight: 600, color: "#D4AF37" }}>{item.agent}</span>
                     {" "}{item.action}
                   </div>
                   <div style={{
@@ -981,7 +981,7 @@ export default function ProfitPipeline() {
                   border: "1px solid #2A2A3E",
                 }}>
                   <div style={{ fontSize: 10, color: "#6B7186", marginBottom: 4, fontFamily: "'Orbitron', monospace" }}>SOURCE</div>
-                  <div style={{ fontSize: 13, color: "#2F80FF" }}>{selectedDeal.source}</div>
+                  <div style={{ fontSize: 13, color: "#008080" }}>{selectedDeal.source}</div>
                 </div>
                 <div style={{
                   padding: 12,
@@ -1030,7 +1030,7 @@ export default function ProfitPipeline() {
                 borderRadius: 8,
                 border: "1px solid rgba(123,97,255,0.3)",
               }}>
-                <div style={{ fontSize: 10, color: "#7B61FF", marginBottom: 4, fontFamily: "'Orbitron', monospace" }}>CURRENT GHL WORKFLOW</div>
+                <div style={{ fontSize: 10, color: "#D4AF37", marginBottom: 4, fontFamily: "'Orbitron', monospace" }}>CURRENT GHL WORKFLOW</div>
                 <div style={{ fontSize: 14, color: "#F5F7FA", fontWeight: 600 }}>{selectedDeal.workflow}</div>
               </div>
 

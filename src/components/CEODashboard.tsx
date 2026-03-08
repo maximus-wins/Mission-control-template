@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 
-const deptColors: Record<string, string> = { Prospect: "#2F80FF", Paid: "#7B61FF", Publish: "#2F80FF", Partner: "#7B61FF", Sales: "#FF4EDB", All: "#8A8F98" };
+const deptColors: Record<string, string> = { Prospect: "#008080", Paid: "#D4AF37", Publish: "#008080", Partner: "#D4AF37", Sales: "#D4AF37", All: "#8A8F98" };
 
 const daysBetween = (a: Date, b: Date) => Math.max(1, Math.round((b.getTime() - a.getTime()) / (1000 * 60 * 60 * 24)));
 const toISO = (d: Date) => d.toISOString().split("T")[0];
@@ -99,23 +99,23 @@ const generateData = (startDate: Date, endDate: Date): DataResult => {
     ],
     promote: {
       channels: [
-        { name: "Prospect", icon: "📧", color: "#2F80FF", leads: Math.round(156 * m), eventRegs: Math.round(42 * m),
+        { name: "Prospect", icon: "📧", color: "#008080", leads: Math.round(156 * m), eventRegs: Math.round(42 * m),
           metrics: { sent: Math.round(28400 * m), replies: Math.round(568 * m), replyRate: 2.0, appointments: Math.round(23 * m) } },
-        { name: "Paid", icon: "💰", color: "#7B61FF", leads: Math.round(98 * m), eventRegs: Math.round(51 * m),
+        { name: "Paid", icon: "💰", color: "#D4AF37", leads: Math.round(98 * m), eventRegs: Math.round(51 * m),
           metrics: { spend: Math.round(4200 * m), clicks: Math.round(3400 * m), cpc: 1.24, cpl: Math.round(4200 * m / Math.max(1, Math.round(98 * m)) * 100) / 100 } },
-        { name: "Publish", icon: "🎬", color: "#2F80FF", leads: Math.round(53 * m), eventRegs: Math.round(18 * m),
+        { name: "Publish", icon: "🎬", color: "#008080", leads: Math.round(53 * m), eventRegs: Math.round(18 * m),
           metrics: { posts: Math.round(14 * m), impressions: Math.round(45000 * m), engagement: 3.2, clicks: Math.round(1800 * m) } },
-        { name: "Partnership", icon: "🤝", color: "#7B61FF", leads: Math.round(35 * m), eventRegs: Math.round(12 * m),
+        { name: "Partnership", icon: "🤝", color: "#D4AF37", leads: Math.round(35 * m), eventRegs: Math.round(12 * m),
           metrics: { activePartners: 8, newPartners: Math.round(2 * m), partnerLeads: Math.round(35 * m), commissions: Math.round(2400 * m) } },
       ],
     },
     profit: {
       funnels: [
-        { name: "Free + Shipping Book", icon: "📖", type: "Cart", color: "#7B61FF", visitors: Math.round(1240 * m), conversions: Math.round(210 * m), rate: 16.9, revenue: Math.round(4200 * m) },
-        { name: "Webinar", icon: "🎙️", type: "Crowd", color: "#2F80FF", visitors: Math.round(890 * m), conversions: Math.round(89 * m), rate: 10.0, revenue: Math.round(28000 * m) },
-        { name: "Challenge", icon: "🏆", type: "Crowd", color: "#FF4EDB", visitors: Math.round(420 * m), conversions: Math.round(34 * m), rate: 8.1, revenue: Math.round(3298 * m) },
-        { name: "Book-a-Call", icon: "📞", type: "Call", color: "#2F80FF", visitors: Math.round(67 * m), conversions: Math.round(8 * m), rate: 11.9, revenue: Math.round(13000 * m) },
-        { name: "Annual Event", icon: "🎤", type: "Crowd", color: "#7B61FF", visitors: 0, conversions: 0, rate: 0, revenue: 0, status: "PLANNED" },
+        { name: "Free + Shipping Book", icon: "📖", type: "Cart", color: "#D4AF37", visitors: Math.round(1240 * m), conversions: Math.round(210 * m), rate: 16.9, revenue: Math.round(4200 * m) },
+        { name: "Webinar", icon: "🎙️", type: "Crowd", color: "#008080", visitors: Math.round(890 * m), conversions: Math.round(89 * m), rate: 10.0, revenue: Math.round(28000 * m) },
+        { name: "Challenge", icon: "🏆", type: "Crowd", color: "#D4AF37", visitors: Math.round(420 * m), conversions: Math.round(34 * m), rate: 8.1, revenue: Math.round(3298 * m) },
+        { name: "Book-a-Call", icon: "📞", type: "Call", color: "#008080", visitors: Math.round(67 * m), conversions: Math.round(8 * m), rate: 11.9, revenue: Math.round(13000 * m) },
+        { name: "Annual Event", icon: "🎤", type: "Crowd", color: "#D4AF37", visitors: 0, conversions: 0, rate: 0, revenue: 0, status: "PLANNED" },
       ],
       aiSales: {
         ticketsSold: Math.round(28 * m), assists: Math.round(45 * m), directSales: Math.round(6 * m),
@@ -124,10 +124,10 @@ const generateData = (startDate: Date, endDate: Date): DataResult => {
     },
     produce: {
       offers: [
-        { name: "Done For You ($50K)", icon: "⚡", color: "#FF4EDB", active: 2, capacity: 5, completed: Math.round(1 * Math.max(1, m/4)), satisfaction: 98, referrals: Math.round(3 * Math.max(1, m/4)) },
-        { name: "Workshop ($5K)", icon: "🔨", color: "#7B61FF", active: 18, capacity: null, completed: Math.round(8 * Math.max(1, m/4)), satisfaction: 94, referrals: Math.round(6 * Math.max(1, m/4)) },
-        { name: "VIP Challenge ($97)", icon: "🏆", color: "#2F80FF", active: 45, capacity: null, completed: Math.round(34 * Math.max(1, m/4)), satisfaction: 91, referrals: Math.round(4 * Math.max(1, m/4)) },
-        { name: "Book Buyers", icon: "📖", color: "#7B61FF", active: Math.round(210 * m), capacity: null, completed: Math.round(210 * m), satisfaction: null, referrals: Math.round(2 * Math.max(1, m/4)) },
+        { name: "Done For You ($50K)", icon: "⚡", color: "#D4AF37", active: 2, capacity: 5, completed: Math.round(1 * Math.max(1, m/4)), satisfaction: 98, referrals: Math.round(3 * Math.max(1, m/4)) },
+        { name: "Workshop ($5K)", icon: "🔨", color: "#D4AF37", active: 18, capacity: null, completed: Math.round(8 * Math.max(1, m/4)), satisfaction: 94, referrals: Math.round(6 * Math.max(1, m/4)) },
+        { name: "VIP Challenge ($97)", icon: "🏆", color: "#008080", active: 45, capacity: null, completed: Math.round(34 * Math.max(1, m/4)), satisfaction: 91, referrals: Math.round(4 * Math.max(1, m/4)) },
+        { name: "Book Buyers", icon: "📖", color: "#D4AF37", active: Math.round(210 * m), capacity: null, completed: Math.round(210 * m), satisfaction: null, referrals: Math.round(2 * Math.max(1, m/4)) },
       ],
       totalReferrals: Math.round(15 * m),
     },
@@ -204,8 +204,8 @@ function MiniCalendar({ value, onChange, onClose }: { value: string; onChange: (
           <div key={i} onClick={() => { if (day) { onChange(toISO(new Date(year, month, day))); }}}
             style={{
               textAlign: "center", padding: "6px 0", borderRadius: 4, fontSize: 12, cursor: day ? "pointer" : "default",
-              color: !day ? "transparent" : isSelected(day) ? "#fff" : isToday(day) ? "#2F80FF" : "#C8CCD4",
-              background: day && isSelected(day) ? "linear-gradient(135deg, #2F80FF, #7B61FF)" : day ? "rgba(255,255,255,0.02)" : "transparent",
+              color: !day ? "transparent" : isSelected(day) ? "#fff" : isToday(day) ? "#008080" : "#C8CCD4",
+              background: day && isSelected(day) ? "linear-gradient(135deg, #008080, #D4AF37)" : day ? "rgba(255,255,255,0.02)" : "transparent",
               fontWeight: (day && isSelected(day)) || (day && isToday(day)) ? 700 : 400,
               fontFamily: "'Space Grotesk', sans-serif",
             }}>
@@ -301,7 +301,7 @@ export default function CEODashboard() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#0B0F19", fontFamily: "'Inter', system-ui, sans-serif", color: "#F5F7FA" }}>
-      <div style={{ height: 3, background: "linear-gradient(90deg, #2F80FF, #7B61FF, #FF4EDB, #7B61FF, #2F80FF)" }} />
+      <div style={{ height: 3, background: "linear-gradient(90deg, #008080, #D4AF37, #D4AF37, #D4AF37, #008080)" }} />
 
       {/* Header */}
       <div style={{ background: "linear-gradient(180deg, #111624, #0B0F19)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "20px 24px 16px" }}>
@@ -309,7 +309,7 @@ export default function CEODashboard() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <div>
               <div style={{ fontSize: 10, letterSpacing: 4, fontFamily: "'Orbitron', monospace",
-                background: "linear-gradient(90deg, #2F80FF, #7B61FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                background: "linear-gradient(90deg, #008080, #D4AF37)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 AI MONETIZATION WORKSHOPS™
               </div>
               <h1 style={{ fontSize: 22, fontWeight: 700, margin: "4px 0 0", color: "#F5F7FA", fontFamily: "'Space Grotesk', sans-serif" }}>CEO Dashboard</h1>
@@ -355,21 +355,21 @@ export default function CEODashboard() {
               </div>
             )}
 
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#FF4EDB" }}>THE MONEY</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#D4AF37" }}>THE MONEY</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <KPICard label="TOTAL REVENUE" value={fmt(d.revenue.current)} trend={<Trend current={d.revenue.current} previous={d.revenue.previous} />} subValue={`vs ${fmt(d.revenue.previous)} prior period`} />
               <KPICard label="NEW SALES" value={d.newSales.count} subValue={`${fmt(d.newSales.value)} total value`} />
               <KPICard label="AVG ORDER VALUE" value={fmt(d.aov.current)} />
             </div>
 
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#2F80FF" }}>THE PIPELINE</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#008080" }}>THE PIPELINE</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <KPICard label="TOTAL NEW LEADS" value={fmtN(d.leads.current)} trend={<Trend current={d.leads.current} previous={d.leads.previous} />} subValue={`vs ${fmtN(d.leads.previous)} prior period`} />
               <KPICard label="EVENT REGISTRATIONS" value={fmtN(d.eventRegs.total)} trend={<Trend current={d.eventRegs.total} previous={d.eventRegs.previous} />} subValue={`${fmtN(d.eventRegs.webinar)} webinar · ${fmtN(d.eventRegs.challenge)} challenge`} />
               <KPICard label="LEAD → SALE RATE" value={`${d.conversionRate.current}%`} trend={<Trend current={d.conversionRate.current} previous={d.conversionRate.previous} />} />
             </div>
 
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#7B61FF" }}>THE HEALTH</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#D4AF37" }}>THE HEALTH</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <div style={{ background: "rgba(255,255,255,0.03)", borderRadius: 10, padding: "18px 22px", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
                 <div style={{ fontSize: 10, color: "#8A8F98", fontFamily: "'Orbitron', monospace", letterSpacing: 1, marginBottom: 10 }}>ACTIVE CLIENTS</div>
@@ -388,7 +388,7 @@ export default function CEODashboard() {
                 {[
                   { label: "Spend", value: fmt(d.adSpend.spend), color: "#EF4444" },
                   { label: "Revenue from Ads", value: fmt(d.adSpend.revenue), color: "#10B981" },
-                  { label: "ROAS", value: `${d.adSpend.roas}x`, color: "#2F80FF" },
+                  { label: "ROAS", value: `${d.adSpend.roas}x`, color: "#008080" },
                 ].map((r, ri) => (
                   <div key={ri} style={{ display: "flex", justifyContent: "space-between", padding: "4px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                     <span style={{ fontSize: 12, color: "#8A8F98" }}>{r.label}</span>
@@ -406,15 +406,15 @@ export default function CEODashboard() {
               {showEngine && (
                 <div style={{ padding: "0 20px 20px", textAlign: "center" }}>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, flexWrap: "wrap", padding: "16px 0" }}>
-                    {[{ label: "PROMOTE", color: "#2F80FF" }, null, { label: "PROFIT", color: "#FF4EDB" }, null, { label: "PRODUCE", color: "#7B61FF" }].map((item, i) => item ? (
+                    {[{ label: "PROMOTE", color: "#008080" }, null, { label: "PROFIT", color: "#D4AF37" }, null, { label: "PRODUCE", color: "#D4AF37" }].map((item, i) => item ? (
                       <span key={i} style={{ background: `${item.color}15`, border: `1px solid ${item.color}33`, padding: "8px 16px", borderRadius: 6, fontSize: 13, fontWeight: 700, color: item.color, fontFamily: "'Space Grotesk', sans-serif" }}>{item.label}</span>
                     ) : <span key={i} style={{ color: "#333", fontSize: 16 }}>→</span>)}
                     <span style={{ color: "#333", fontSize: 16 }}>↩</span>
                   </div>
                   <div style={{ fontSize: 12, color: "#8A8F98", lineHeight: 1.6, maxWidth: 700, margin: "0 auto" }}>
-                    <strong style={{ color: "#2F80FF" }}>Promote</strong> (Prospect + Paid + Publish + Partnership) generates leads →
-                    <strong style={{ color: "#FF4EDB" }}> Profit</strong> (Cart + Call + Crowd) closes them →
-                    <strong style={{ color: "#7B61FF" }}> Produce</strong> delivers & delights → Referrals loop back to Promote
+                    <strong style={{ color: "#008080" }}>Promote</strong> (Prospect + Paid + Publish + Partnership) generates leads →
+                    <strong style={{ color: "#D4AF37" }}> Profit</strong> (Cart + Call + Crowd) closes them →
+                    <strong style={{ color: "#D4AF37" }}> Produce</strong> delivers & delights → Referrals loop back to Promote
                   </div>
                   <div style={{ fontSize: 10, color: "#555", marginTop: 8, fontFamily: "'Orbitron', monospace" }}>PROJECT MANAGE supports all three</div>
                 </div>
@@ -426,7 +426,7 @@ export default function CEODashboard() {
         {/* ========= PROMOTE ========= */}
         {view === "promote" && (
           <div>
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#2F80FF" }}>PROMOTE</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#008080" }}>PROMOTE</div>
             <div style={{ fontSize: 13, color: "#6B7186", marginBottom: 20 }}>Marketing — Goal is leads and event registrations · {d.rangeLabel}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <KPICard small label="TOTAL LEADS" value={fmtN(d.leads.current)} trend={<Trend current={d.leads.current} previous={d.leads.previous} />} />
@@ -464,7 +464,7 @@ export default function CEODashboard() {
         {/* ========= PROFIT ========= */}
         {view === "profit" && (
           <div>
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#FF4EDB" }}>PROFIT</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#D4AF37" }}>PROFIT</div>
             <div style={{ fontSize: 13, color: "#6B7186", marginBottom: 20 }}>Sales — Funnels (Cart + Crowd) & AI Sales Team (Call) · {d.rangeLabel}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <KPICard small label="TOTAL REVENUE" value={fmt(d.revenue.current)} trend={<Trend current={d.revenue.current} previous={d.revenue.previous} />} />
@@ -472,7 +472,7 @@ export default function CEODashboard() {
               <KPICard small label="CONVERSION RATE" value={`${d.conversionRate.current}%`} trend={<Trend current={d.conversionRate.current} previous={d.conversionRate.previous} />} />
               <KPICard small label="AI SALES REVENUE" value={fmt(d.profit.aiSales.revenue)} />
             </div>
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#2F80FF" }}>FUNNELS</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, fontFamily: "'Orbitron', monospace", color: "#008080" }}>FUNNELS</div>
             {d.profit.funnels.map((f, fi) => (
               <div key={fi} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "18px 22px", marginBottom: 10, borderLeft: `4px solid ${f.color}`, boxShadow: "0 1px 4px rgba(0,0,0,0.2)", opacity: f.status === "PLANNED" ? 0.4 : 1 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -483,7 +483,7 @@ export default function CEODashboard() {
                     {f.status === "PLANNED" && <span style={{ fontSize: 10, color: "#6B7186", fontFamily: "'Orbitron', monospace", padding: "1px 6px", background: "rgba(255,255,255,0.06)", borderRadius: 3 }}>PLANNED</span>}
                   </div>
                   <div style={{ display: "flex", gap: 20 }}>
-                    {[{ label: "VISITORS", value: fmtN(f.visitors) }, { label: "CONVERSIONS", value: fmtN(f.conversions) }, { label: "CVR", value: `${f.rate}%`, color: f.rate > 10 ? "#10B981" : f.rate > 5 ? "#2F80FF" : "#EF4444" }, { label: "REVENUE", value: fmt(f.revenue), color: "#10B981" }].map((mm, mi) => (
+                    {[{ label: "VISITORS", value: fmtN(f.visitors) }, { label: "CONVERSIONS", value: fmtN(f.conversions) }, { label: "CVR", value: `${f.rate}%`, color: f.rate > 10 ? "#10B981" : f.rate > 5 ? "#008080" : "#EF4444" }, { label: "REVENUE", value: fmt(f.revenue), color: "#10B981" }].map((mm, mi) => (
                       <div key={mi} style={{ textAlign: "right" }}>
                         <div style={{ fontSize: 9, color: "#6B7186", fontFamily: "'Orbitron', monospace" }}>{mm.label}</div>
                         <div style={{ fontSize: 16, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: mm.color || "#F5F7FA" }}>{mm.value}</div>
@@ -493,8 +493,8 @@ export default function CEODashboard() {
                 </div>
               </div>
             ))}
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, marginTop: 24, fontFamily: "'Orbitron', monospace", color: "#FF4EDB" }}>AI SALES TEAM</div>
-            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,78,219,0.15)", borderRadius: 10, padding: "20px 24px", borderLeft: "4px solid #FF4EDB", boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 10, marginTop: 24, fontFamily: "'Orbitron', monospace", color: "#D4AF37" }}>AI SALES TEAM</div>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,78,219,0.15)", borderRadius: 10, padding: "20px 24px", borderLeft: "4px solid #D4AF37", boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr", gap: 10 }}>
                 {[{ label: "CONVERSATIONS", value: fmtN(d.profit.aiSales.totalConversations) }, { label: "AVG RESPONSE", value: d.profit.aiSales.responseTime }, { label: "TICKET SALES", value: d.profit.aiSales.ticketsSold, sub: "to events" }, { label: "ASSISTS", value: d.profit.aiSales.assists, sub: "to closers" }, { label: "DIRECT SALES", value: d.profit.aiSales.directSales, sub: "closed by AI" }, { label: "REVENUE", value: fmt(d.profit.aiSales.revenue) }].map((mm, mi) => (
                   <div key={mi} style={{ background: "rgba(255,78,219,0.05)", borderRadius: 8, padding: "12px 14px", border: "1px solid rgba(255,78,219,0.1)", textAlign: "center" }}>
@@ -511,7 +511,7 @@ export default function CEODashboard() {
         {/* ========= PRODUCE ========= */}
         {view === "produce" && (
           <div>
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#7B61FF" }}>PRODUCE</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 6, fontFamily: "'Orbitron', monospace", color: "#D4AF37" }}>PRODUCE</div>
             <div style={{ fontSize: 13, color: "#6B7186", marginBottom: 20 }}>Delivery — Active clients, completion, satisfaction & referrals · {d.rangeLabel}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
               <KPICard small label="TOTAL ACTIVE CLIENTS" value={Object.values(d.activeClients).reduce((a, c) => a + c.count, 0)} />
@@ -542,12 +542,12 @@ export default function CEODashboard() {
                   {o.satisfaction && (
                     <div style={{ background: "rgba(255,255,255,0.03)", borderRadius: 6, padding: "10px 14px", border: "1px solid rgba(255,255,255,0.04)" }}>
                       <div style={{ fontSize: 9, color: "#6B7186", fontFamily: "'Orbitron', monospace", marginBottom: 4 }}>SATISFACTION</div>
-                      <div style={{ fontSize: 20, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: o.satisfaction > 95 ? "#10B981" : o.satisfaction > 85 ? "#2F80FF" : "#F59E0B" }}>{o.satisfaction}%</div>
+                      <div style={{ fontSize: 20, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: o.satisfaction > 95 ? "#10B981" : o.satisfaction > 85 ? "#008080" : "#F59E0B" }}>{o.satisfaction}%</div>
                     </div>
                   )}
                   <div style={{ background: "rgba(255,255,255,0.03)", borderRadius: 6, padding: "10px 14px", border: "1px solid rgba(255,255,255,0.04)" }}>
                     <div style={{ fontSize: 9, color: "#6B7186", fontFamily: "'Orbitron', monospace", marginBottom: 4 }}>REFERRALS</div>
-                    <div style={{ fontSize: 20, fontWeight: 700, color: "#7B61FF", fontFamily: "'Space Grotesk', sans-serif" }}>{o.referrals}</div>
+                    <div style={{ fontSize: 20, fontWeight: 700, color: "#D4AF37", fontFamily: "'Space Grotesk', sans-serif" }}>{o.referrals}</div>
                   </div>
                 </div>
               </div>
@@ -558,7 +558,7 @@ export default function CEODashboard() {
         {/* ========= 24HR SCHEDULE ========= */}
         {view === "schedule" && (
           <div>
-            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 16, fontFamily: "'Orbitron', monospace", color: "#2F80FF" }}>24/7 AI WORKFORCE SCHEDULE</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, marginBottom: 16, fontFamily: "'Orbitron', monospace", color: "#008080" }}>24/7 AI WORKFORCE SCHEDULE</div>
             <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "24px", boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
               <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 20, padding: "10px 14px", background: "rgba(255,255,255,0.03)", borderRadius: 6 }}>
                 {Object.entries(deptColors).map(([name, color]) => (
@@ -568,7 +568,7 @@ export default function CEODashboard() {
                 ))}
               </div>
               {[
-                { shift: "MORNING", time: "6 AM – 12 PM", color: "#2F80FF", tasks: [
+                { shift: "MORNING", time: "6 AM – 12 PM", color: "#008080", tasks: [
                   { time: "6:00", task: "Analyze overnight results — all channels", dept: "All" },
                   { time: "7:00", task: "Morning cold email batch", dept: "Prospect" },
                   { time: "7:30", task: "AI Sales processes overnight leads", dept: "Sales" },
@@ -578,7 +578,7 @@ export default function CEODashboard() {
                   { time: "10:30", task: "Qualify & book appointments", dept: "Sales" },
                   { time: "11:00", task: "Affiliate recruitment batch", dept: "Partner" },
                 ]},
-                { shift: "AFTERNOON", time: "12 PM – 6 PM", color: "#7B61FF", tasks: [
+                { shift: "AFTERNOON", time: "12 PM – 6 PM", color: "#D4AF37", tasks: [
                   { time: "12:00", task: "Second cold email batch", dept: "Prospect" },
                   { time: "12:30", task: "AI Sales follow-up", dept: "Sales" },
                   { time: "1:00", task: "Book launch — partner coordination", dept: "Partner" },
@@ -588,7 +588,7 @@ export default function CEODashboard() {
                   { time: "5:00", task: "Affiliate performance updates", dept: "Partner" },
                   { time: "5:30", task: "Ad budget reallocation", dept: "Paid" },
                 ]},
-                { shift: "NIGHT", time: "6 PM – 12 AM", color: "#FF4EDB", tasks: [
+                { shift: "NIGHT", time: "6 PM – 12 AM", color: "#D4AF37", tasks: [
                   { time: "6:00", task: "Evening cold email batch", dept: "Prospect" },
                   { time: "6:30", task: "AI Sales final push — hot leads", dept: "Sales" },
                   { time: "7:00", task: "Dream 100 social engagement", dept: "Partner" },
@@ -630,9 +630,9 @@ export default function CEODashboard() {
 
         {/* Footer */}
         <div style={{ marginTop: 32, textAlign: "center" }}>
-          <div style={{ height: 2, background: "linear-gradient(90deg, transparent, #2F80FF44, #7B61FF44, #FF4EDB44, transparent)", marginBottom: 16 }} />
+          <div style={{ height: 2, background: "linear-gradient(90deg, transparent, #00808044, #D4AF3744, #D4AF3744, transparent)", marginBottom: 16 }} />
           <span style={{ fontSize: 16, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: "#F5F7FA" }}>
-            STOP LEARNING. <span style={{ color: "#FF4EDB" }}>START BUILDING.</span>
+            STOP LEARNING. <span style={{ color: "#D4AF37" }}>START BUILDING.</span>
           </span>
         </div>
       </div>

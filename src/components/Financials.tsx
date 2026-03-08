@@ -483,8 +483,8 @@ const BusinessTab = () => (
         }}
       >
         <ProgressBar label="Revenue" percentage={112} color="#10B981" />
-        <ProgressBar label="Expenses" percentage={94} color="#7B61FF" />
-        <ProgressBar label="Net Profit" percentage={118} color="#2F80FF" />
+        <ProgressBar label="Expenses" percentage={94} color="#D4AF37" />
+        <ProgressBar label="Net Profit" percentage={118} color="#008080" />
       </div>
     </div>
 
@@ -683,7 +683,7 @@ export default function Financials() {
               fontSize: 28,
               fontWeight: 700,
               fontFamily: "'Orbitron', monospace",
-              background: "linear-gradient(90deg, #10B981, #2F80FF)",
+              background: "linear-gradient(90deg, #10B981, #008080)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               margin: 0,
@@ -753,7 +753,7 @@ export default function Financials() {
             transition: "all 0.2s ease",
             background:
               activeTab === "personal"
-                ? "linear-gradient(135deg, #7B61FF 0%, #5B45CC 100%)"
+                ? "linear-gradient(135deg, #D4AF37 0%, #5B45CC 100%)"
                 : "transparent",
             color: activeTab === "personal" ? "#FFFFFF" : "#8A8F98",
             boxShadow:

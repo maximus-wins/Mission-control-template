@@ -11,12 +11,12 @@ import Financials from "@/components/Financials";
 
 // Navigation items - add more here as needed
 const navItems = [
-  { id: "ceo-dashboard", label: "CEO Dashboard", icon: "📊", color: "#FF4EDB" },
+  { id: "ceo-dashboard", label: "CEO Dashboard", icon: "📊", color: "#D4AF37" },
   { id: "revenue-engine", label: "Revenue Engine", icon: "💰", color: "#10B981" },
-  { id: "ai-workforce", label: "AI Workforce", icon: "🤖", color: "#2F80FF" },
+  { id: "ai-workforce", label: "AI Workforce", icon: "🤖", color: "#008080" },
   { id: "profit-pipeline", label: "Profit Pipeline", icon: "📈", color: "#10B981" },
-  { id: "media-hub", label: "Media Hub", icon: "🎬", color: "#FF4EDB" },
-  { id: "projects", label: "Projects", icon: "📋", color: "#7B61FF" },
+  { id: "media-hub", label: "Media Hub", icon: "🎬", color: "#D4AF37" },
+  { id: "projects", label: "Projects", icon: "📋", color: "#D4AF37" },
   { id: "financials", label: "Financials", icon: "💵", color: "#10B981" },
 ];
 
